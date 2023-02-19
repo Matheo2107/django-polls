@@ -1,0 +1,68 @@
+*{
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: white url('images/background_polls.jpg') no-repeat;
+    margin: 20px;
+}
+
+span {
+    display: flex;
+    overflow: hidden;
+}
+
+label {
+    display: flex;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 0.4em 1em 0.4em 1em ;
+    border-radius: 10px;
+    transition: 0.25s ease; 
+}
+
+label:before {
+    display: flex;
+    flex-shrink: 0;
+    content: "";
+    background-color: #fff;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    margin-right: 0.375em;
+    transition: 0.25s ease;
+    box-shadow: inset 0 0 0 0.125em #1b1b66;
+}
+
+label:hover{
+    background-color: #a7a7d3;
+}
+
+.inputs {
+    position: absolute;
+    left: -1000px;
+}
+
+.inputs:checked + label{
+    background-color: #a7a7d4;
+    
+}
+
+.inputs:checked + label:before{
+    box-shadow: inset 0 0 0 0.400em #1b1b66;
+}
+
+fieldset {
+    border-radius: 1em;
+    border-color: #1b1b66;
+}
+
+
+.button {
+    margin: 0.5em 0em 0em 2em;
+    padding: 0.5em 0.8em 0.3em 0.8em ;
+    background-color: #1b1b66;
+    font-size: 16px;
+    border-radius: 0.5em;
+    color: white;
+}

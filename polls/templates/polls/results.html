@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'polls/results_style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{ question.question_text }}</h1>
+
+    <div class="list">
+        <div class="list_vote">
+            <ul>
+            {% for choice in question.choice_set.all %}
+                <div class="vote">
+                    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+                    {% endfor %}
+                </div>
+            </ul>
+        </div>
+        <div class="list_prog">
+            <ul>
+            {% for choice in question.choice_set.all %}
+                <div class="prog_wrapper">
+                    <div class="prog" style="width: {{choice.get_prog}}%">
+                    <p>{{choice.votes}} / {{question.number_votes}}</p>
+                </div>
+                </div>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+    
+    <form action="{% url 'polls:detail' question.id %}">
+        <input type="submit" value="Vote Again" />
+    </form>
+    <form action="{% url 'polls:index'%}">
+        <input type="submit" value="Polls" />
+    </form>
+    
+</body>
+</html>

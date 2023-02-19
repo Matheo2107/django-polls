@@ -1,0 +1,42 @@
+li a {
+    color: black;
+    margin-left: 10px;
+    font-size: 18px;
+    background-size: 100%;
+}
+
+li {
+    line-height: 30px;
+    padding: 5px;
+    margin: 25px;
+    margin-left: 50px;
+    padding-left: 20px;
+    background-image: linear-gradient(to right, rgb(205, 207, 245), rgb(179, 177, 245));
+    border: solid;
+    border-width: 2px;
+    border-radius: 20px;
+    border-color: rgb(68, 74, 185);
+    width: 60%;
+    list-style-image: url('images/icon_polls.png');
+    list-style-position: inside;
+}
+
+
+li:hover{
+    transform:  scale(1.05);
+    transition-duration: .5s;
+}
+
+*{
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Poppins', sans-serif; */
+}
+
+
+
+body {
+    background: white url('images/background_polls.jpg') no-repeat;
+
+}
